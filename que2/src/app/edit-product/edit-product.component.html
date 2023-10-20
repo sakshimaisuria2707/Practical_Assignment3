@@ -1,0 +1,30 @@
+<p>edit-product works!</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="/edit/:id" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        <div *ngIf="formdata">
+            Prd Namme:<input type="text" name="pname" [(ngModel)]="prdData.pname" value="{{formdata.pname}}" />
+            <br><br>
+            Category:<select name="cname" [(ngModel)]="prdData.cname" value="{{select}}">
+                <option>Select Category</option>
+                <option *ngFor="let c of category">{{c.cname}}</option>
+            </select><br><br>
+            Price:<input type="number" [(ngModel)]="prdData.pprice" value="{{formdata.pprice}}" name="price" /> <br><br>
+            Price:<input type="text" [(ngModel)]="prdData.pdesc" value="{{formdata.pdesc}}" name="price" /> <br><br>
+
+            Qnty:<input type="number" [(ngModel)]="prdData.pqty" value="{{formdata.pqty}}" name="qtny" /> <br><br>
+            <!-- Image:<input type="file" [(ngModel)]="prdData.image" name="image" (change)="onFileSelect($event)"/> <br><br> -->
+        </div>
+        <input type="submit" value="Insert">
+    </form><br><br>
+</body>
+
+</html>

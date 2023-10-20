@@ -1,0 +1,47 @@
+<p style="font-size: 30px;">Create Angular application with routing link assigned for following requirements:.
+</p>
+
+<ol>
+    <li>
+        <strong> - Display integer, sting, date data in a component.</strong>
+        <p>Integer: {{var1}}</p>
+        <p>String:{{var2}}</p>
+        <p>Date:{{var3}}</p>
+    </li>
+
+    <li>
+        <p> - Display array values in html list.</p>
+
+        <ul>
+            <li *ngFor="let a of array1">
+                {{a}}
+            </li>
+        </ul>
+    </li>
+
+    <br>
+    <li>
+        <p> - Display array in combo.
+        </p>
+        <select>
+            <option *ngFor="let a of array1">{{a}}</option>
+        </select>
+    </li>
+    <br>
+
+    <li>
+        <p>
+            - Take a combo with two values (textbox, textarea). Display textbox or textarea
+            depending on selection of a combo.</p>
+        <select id="selection" [(ngModel)]="selection" (change)="OnChange()">
+            <option *ngFor="let a2 of array2">{{a2}}</option>
+        </select><br>
+        <br>
+        <div *ngIf="selection==='textbox'">
+            <input type="text" [(ngModel)]="textbox1">
+        </div><br>
+        <div *ngIf="selection==='textarea'">
+            <textarea name="" id="" cols="30" rows="10" [(ngModel)]="textarea1"></textarea>
+        </div>
+    </li>
+</ol>
